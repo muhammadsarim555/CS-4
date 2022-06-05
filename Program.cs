@@ -1,19 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace lab2_assignment
 {
-    class Program
+    internal class Program
     {
+
+
+
+        static void avrNumbers()
+        {
+            Int32  numberOfInputs ;
+            Double  sum= 0;
+
+            Console.WriteLine("How many numbers do you want to input?");
+            numberOfInputs = Convert.ToInt32(Console.ReadLine());
+
+            Double[] avr_num = new Double[numberOfInputs];
+
+
+            for (Int32 i = 0; i < numberOfInputs; i++)
+            {
+                avr_num[i] = Double.Parse(Console.ReadLine());
+            }
+
+            for (Int32 l = 0; l < numberOfInputs; l++)
+            {
+               sum = sum + avr_num[l];
+            }
+
+            Console.WriteLine("Total Sum === " + sum);
+            Console.WriteLine("Total Sum === " + sum / numberOfInputs);
+        }
+
         static void Main(string[] args)
         {
             human hInfo = new human();
+            add_criteria addmissionCritiria = new add_criteria();
 
+
+            // FOR QUESTION 1
             Int32 age;
             String name, gender;
+
+            // FOR QUESTION 2 VARIABLES
+            Int32 math, phy, chem;
+
 
             Console.WriteLine("ENTER AGE--");
 
@@ -27,11 +58,33 @@ namespace ConsoleApplication1
 
             gender = Convert.ToString(Console.ReadLine());
 
-            hInfo.setHumanInfo(age,name,gender);
+            hInfo.setHumanInfo(age, name, gender);
 
-            Console.WriteLine(hInfo.getAge());
-            Console.WriteLine(hInfo.getName());
-            Console.WriteLine(hInfo.getGender());
+
+
+            hInfo.validateCNIC();
+
+            Console.WriteLine("\n QUESTION # 2 \n");
+
+            Console.WriteLine("ENTER MATH MARKS --");
+
+            math = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ENTER CHEMISTRY MARKS--");
+
+            chem = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("ENTER PHYSICS MARKS--");
+
+            phy = Convert.ToInt32(Console.ReadLine());
+
+
+            addmissionCritiria.setMarks(math, phy, chem);
+
+            Console.WriteLine("Question # 3 == \n");
+            avrNumbers();
+
+
 
             Console.ReadKey();
         }

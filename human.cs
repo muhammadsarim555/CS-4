@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace lab2_assignment
 {
-    class human
+    internal class human
     {
         Int32 age;
         String name, gender;
@@ -32,6 +32,19 @@ namespace ConsoleApplication1
         public String getGender()
         {
             return gender;
+        }
+        public void validateCNIC ()
+        {
+            if(age >= 18)
+            {
+             Console.WriteLine("VALID FOR CNIC == YES! \n");
+
+            }
+            else
+            {
+                Console.WriteLine("VALID FOR CNIN == NO! \n");
+
+            }
         }
 
     }
