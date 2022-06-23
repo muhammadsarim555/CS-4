@@ -1,39 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace ConsoleApplication1
+namespace WindowsFormsApplication11
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            human hInfo = new human();
-
-            Int32 age;
-            String name, gender;
-
-            Console.WriteLine("ENTER AGE--");
-
-            age = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("ENTER NAME--");
-
-            name = Convert.ToString(Console.ReadLine());
-
-            Console.WriteLine("ENTER GENDER--");
-
-            gender = Convert.ToString(Console.ReadLine());
-
-            hInfo.setHumanInfo(age,name,gender);
-
-            Console.WriteLine(hInfo.getAge());
-            Console.WriteLine(hInfo.getName());
-            Console.WriteLine(hInfo.getGender());
-
-            Console.ReadKey();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Form1());
+            //Application.Run(new Form2());
+            Application.Run(new Form3());
         }
     }
 }
